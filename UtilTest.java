@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
  * @author  Dr. Jody Paul
  * @author  CS3250 Fall 2025
  * @version 20251105
+ * @Author: Julio Vasquez
  */
 public class UtilTest {
     /**
@@ -62,6 +63,32 @@ public class UtilTest {
         // assertEquals(24157817, Util.fibon(37));
         // assertEquals(102334155, Util.fibon(40));
         // assertEquals(12586269025L, Util.fibon(50));
+
+    }
+
+
+    /** 
+     * Test detectRepeats with interval of 2.
+     * Sequence: 1, 2, 3, 1
+     * Expected: one repeat detected.
+     */
+    @Test
+    public void testDetectRepeatsDistanceTwo() {
+        IntStream stream = IntStream.of(1, 2, 3, 1);
+        int interval = 2;
+        assertEquals(1, Util.detectRepeats(stream, interval));
+    }
+
+    /**
+     * Test detectRepeats with multiple numbers.
+     * Sequence: 5, 6, 5, 7, 6
+     * Expected: one repeat detected for interval = 1.
+     */
+    @Test
+    public void testDetectRepeatsMultiple() {
+        IntStream stream = IntStream.of(5, 6, 5, 7, 6);
+        int interval = 1;
+        assertEquals(1, Util.detectRepeats(stream, interval));
     }
 
     /// Add tests for detectRepeats below.
